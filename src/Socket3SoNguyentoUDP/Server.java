@@ -26,7 +26,7 @@ import sun.audio.AudioDataStream;
  *
  * @author Unmatched TaiNguyen
  */
-public class ServerSide {
+public class Server {
     public static DatagramPacket GetPacket(Object obj,String Adress,int Port){
         try {
             ByteArrayOutputStream outp = new ByteArrayOutputStream();
@@ -40,7 +40,7 @@ public class ServerSide {
             return p;
             
         } catch (IOException ex) {
-            Logger.getLogger(ServerSide.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -51,7 +51,7 @@ public class ServerSide {
             
             return in.readObject();
         } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(ServerSide.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -124,9 +124,9 @@ public class ServerSide {
             }while(chon != 3);
             
         } catch (SocketException ex) {
-            Logger.getLogger(ServerSide.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ServerSide.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
    

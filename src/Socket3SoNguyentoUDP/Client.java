@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  *
  * @author Unmatched TaiNguyen
  */
-public class ClientSide {
+public class Client {
       public static DatagramPacket GetPacket(Object obj,String Adress,int Port){
         try {
             ByteArrayOutputStream outp = new ByteArrayOutputStream();
@@ -38,7 +38,7 @@ public class ClientSide {
             return p;
             
         } catch (IOException ex) {
-            Logger.getLogger(ServerSide.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -49,7 +49,7 @@ public class ClientSide {
             
             return in.readObject();
         } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(ServerSide.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -123,9 +123,9 @@ public class ClientSide {
             }while(chon != 3);
 
           } catch (SocketException ex) {
-              Logger.getLogger(ClientSide.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
           } catch (IOException ex) {
-              Logger.getLogger(ClientSide.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
           }
         
         
